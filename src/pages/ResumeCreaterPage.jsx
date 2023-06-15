@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ResumeTemplate from "../component/ResumeTemplate/ResumeTemplate";
 import ResumeOption from "../component/ResumeInputs/ResumeOption";
+import SelectionComponent from "../component/ResumeInputs/SelectionComponent";
 
 const ResumeCreaterPage = () => {
   /* -------------contact section------------------------- */
@@ -157,9 +158,7 @@ const ResumeCreaterPage = () => {
       { feature: project.projectfeatures, id: feature.length + 1 },
     ]);
 
-
     setProject({ ...project, projectfeatures: "" });
-
   };
 
   const handleTechStackChange = (e) => {
@@ -169,11 +168,22 @@ const ResumeCreaterPage = () => {
     ]);
     setProject({ ...project, projecttechstack: "" });
   };
+
+  const [selectedOption, setSelectedOption] = useState("Contact Section");
+  const handleSelection = (selectedItem) => {
+    setSelectedOption(selectedItem);
+  };
   return (
     <div className="d-flex justify-content-between px-4 mt-4  py-4">
       <div className="w-25 ">
+        <div className='mt-4'>
+          {" "}
+          <SelectionComponent handleSelection={handleSelection} />
+        </div>
+
         <ResumeOption
           {...{
+            selectedOption,
             handleContactDetails,
             skill,
             handleSkillInputValue,

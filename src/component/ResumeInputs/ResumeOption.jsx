@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { AiOutlinePlusCircle, AiOutlineTrash } from "react-icons/ai";
 const ResumeOption = ({
+  selectedOption,
   handleContactDetails,
   skill,
   handleSkillInputValue,
@@ -25,8 +26,7 @@ const ResumeOption = ({
 }) => {
   return (
     <div className="d-flex flex-column px-4">
-      <Form.Group>
-        <Form.Label>Contact Section</Form.Label>
+      {selectedOption == 'Contact Section' && <Form.Group>
         <Form.Control
           type="text"
           placeholder="Full Name..."
@@ -50,9 +50,8 @@ const ResumeOption = ({
           className="mb-3"
         />
       </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Skill Section</Form.Label>
+      }
+      {selectedOption == 'Skill Section' && <Form.Group>
         <Form.Control
           type="text"
           value={skill}
@@ -63,10 +62,9 @@ const ResumeOption = ({
         <Button variant="primary" onClick={handleSkillsData} className="mb-3">
           Add Skill
         </Button>
-      </Form.Group>
+      </Form.Group>}
 
-      <Form.Group>
-        <Form.Label>Education Section</Form.Label>
+      {selectedOption == 'Education Section'&& <Form.Group>
         <Form.Control
           type="text"
           onChange={handleEducationDetails}
@@ -94,10 +92,9 @@ const ResumeOption = ({
         <Button variant="primary" onClick={handleAddEducation} className="mb-3">
           Add Education
         </Button>
-      </Form.Group>
+      </Form.Group>}
 
-      <Form.Group>
-        <Form.Label>Work Experience Section</Form.Label>
+      {selectedOption == 'Work Experience Section' &&    <Form.Group>
         <Form.Control
           type="text"
           onChange={handleWorkExperienceDetails}
@@ -130,9 +127,9 @@ const ResumeOption = ({
           Add Experience
         </Button>
       </Form.Group>
-
-      <Form.Group>
-        <Form.Label>Interest Section</Form.Label>
+      }
+     { 
+        selectedOption == 'Interest Section' &&    <Form.Group>
         <Form.Control
           type="text"
           value={interest}
@@ -143,10 +140,9 @@ const ResumeOption = ({
         <Button variant="primary" onClick={handleinterestData} className="mb-3">
           Add Interest
         </Button>
-      </Form.Group>
+      </Form.Group>}
 
-      <Form.Group>
-        <Form.Label>Summary</Form.Label>
+      {selectedOption == 'Summary Section' &&     <Form.Group>
         <Form.Control
           as="textarea"
           rows={3}
@@ -154,10 +150,9 @@ const ResumeOption = ({
           onChange={handleSummary}
           className="mb-3"
         />
-      </Form.Group>
+      </Form.Group>}
 
-      <Form.Group>
-        <Form.Label>Project Section</Form.Label>
+      {selectedOption == 'Project Section' &&     <Form.Group>
         <Form.Control
           type="text"
           name="projectname"
@@ -209,7 +204,7 @@ const ResumeOption = ({
         <Button variant="primary" onClick={handleProjectData}>
           Add Project
         </Button>
-      </Form.Group>
+      </Form.Group>}
     </div>
   );
 };
