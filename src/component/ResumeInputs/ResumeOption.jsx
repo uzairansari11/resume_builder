@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { AiOutlinePlusCircle, AiOutlineTrash } from "react-icons/ai";
-import TagAutocomplete from "react-tag-autocomplete";
 const ResumeOption = ({
   handleContactDetails,
   skill,
