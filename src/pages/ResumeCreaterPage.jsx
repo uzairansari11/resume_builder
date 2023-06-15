@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import ResumeOption from "../component/ResumeOption";
+
 import ResumeTemplate from "../component/ResumeTemplate";
+import ResumeOption from '../component/ResumeOption';
 
 const ResumeCreaterPage = () => {
   /* contact section  */

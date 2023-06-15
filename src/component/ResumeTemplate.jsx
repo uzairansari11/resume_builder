@@ -1,4 +1,5 @@
 import React from "react";
+import CustomList from './CustomList';
 
 const ResumeTemplate = ({
   contact,
@@ -11,7 +12,7 @@ const ResumeTemplate = ({
 }) => {
   return (
     <div className=" d-flex justify-content-around border ">
-      <div className="d-flex flex-column w-45  px-4 text-left ">
+      <div className="d-flex flex-column w-25  px-4 text-left ">
         {/* Contact Section */}
         <div>
           <h5>Contact</h5>
@@ -30,12 +31,13 @@ const ResumeTemplate = ({
         {/* Skills Section */}
         <div>
           <h5>Skill</h5>
-          <ul className="list-unstyled">
+          <div className="d-flex flex-wrap">
             {skills.map((item) => (
-              <li key={item.id}>{item.skill}</li>
+              <CustomList data={item.skill} />
             ))}
-          </ul>
+          </div>
         </div>
+
         {/* Education Section */}
         <div>
           <h5>Education</h5>
@@ -65,11 +67,12 @@ const ResumeTemplate = ({
         {/* Interests Section */}
         <div>
           <h5>Interests</h5>
-          <ul className="list-unstyled">
+          <div className="d-flex flex-wrap">
             {intrestData.map((item) => (
-              <li key={item.id}>{item.intrest}</li>
+              <CustomList  data={item.intrest}/>
             ))}
-          </ul>
+          </div>
+       
         </div>
       </div>
       <div className="d-flex flex-column w-50 px-4 text-left ">
@@ -90,13 +93,20 @@ const ResumeTemplate = ({
                   <strong>Description:</strong> {item.projectdescription}
                 </p>
                 <strong>Features:</strong>
-                {item.projectfeatures.map((item) => (
-                  <p>{item}</p>
-                ))}
+                <div className="d-flex flex-wrap">
+                  {item.projectfeatures.map((item) => (
+                    <CustomList data={item} />
+                  ))}
+                </div>
+
                 <strong>Techstack:</strong>
-                {item.projecttechstack.map((item) => (
-                  <p>{item}</p>
-                ))}
+                <div className="d-flex flex-wrap">
+                  {item.projecttechstack.map((item) => (
+                    <CustomList data={item} />
+                  ))}
+
+                </div>
+
               </div>
             );
           })}
