@@ -7,15 +7,18 @@ const ResumeOption = ({
   skill,
   handleSkillInputValue,
   handleSkillsData,
+  education,
   handleEducationDetails,
   handleAddEducation,
+  workExperience,
   handleWorkExperienceDetails,
   handleAddWorkExperience,
-  handleIntrestInputValue,
-  handleIntrestData,
-  intrest,
+  handleinterestInputValue,
+  handleinterestData,
+  interest,
   handleSummary,
   summary,
+  project,
   handleProjectChange,
   handleProjectData,
   handleFeatureChange,
@@ -71,6 +74,7 @@ const ResumeOption = ({
           name="degree"
           placeholder="Degree Name..."
           className="mb-3"
+          value={education.degree}
         />
         <Form.Control
           type="text"
@@ -78,6 +82,7 @@ const ResumeOption = ({
           name="college"
           placeholder="College/University Name..."
           className="mb-3"
+          value={education.college}
         />
         <Form.Control
           type="text"
@@ -85,6 +90,7 @@ const ResumeOption = ({
           name="year"
           placeholder="Duration..."
           className="mb-3"
+          value={education.year}
         />
         <Button variant="primary" onClick={handleAddEducation} className="mb-3">
           Add Education
@@ -99,6 +105,7 @@ const ResumeOption = ({
           name="company"
           placeholder="Company Name..."
           className="mb-3"
+          value={workExperience.company}
         />
         <Form.Control
           type="text"
@@ -106,6 +113,7 @@ const ResumeOption = ({
           name="designation"
           placeholder="Designation..."
           className="mb-3"
+          value={workExperience.designation}
         />
         <Form.Control
           type="text"
@@ -113,8 +121,13 @@ const ResumeOption = ({
           name="year"
           placeholder="Duration..."
           className="mb-3"
+          value={workExperience.year}
         />
-        <Button variant="primary" onClick={handleAddWorkExperience} className="mb-3">
+        <Button
+          variant="primary"
+          onClick={handleAddWorkExperience}
+          className="mb-3"
+        >
           Add Experience
         </Button>
       </Form.Group>
@@ -123,12 +136,12 @@ const ResumeOption = ({
         <Form.Label>Interest Section</Form.Label>
         <Form.Control
           type="text"
-          value={intrest}
-          onChange={(e) => handleIntrestInputValue(e.target.value)}
+          value={interest}
+          onChange={(e) => handleinterestInputValue(e.target.value)}
           placeholder="Add Interest..."
           className="mb-3"
         />
-        <Button variant="primary" onClick={handleIntrestData} className="mb-3">
+        <Button variant="primary" onClick={handleinterestData} className="mb-3">
           Add Interest
         </Button>
       </Form.Group>
@@ -152,6 +165,7 @@ const ResumeOption = ({
           onChange={handleProjectChange}
           placeholder="Project Name..."
           className="mb-3"
+          value={project.projectname}
         />
         <Form.Control
           type="text"
@@ -159,6 +173,7 @@ const ResumeOption = ({
           onChange={handleProjectChange}
           placeholder="Project Description..."
           className="mb-3"
+          value={project.projectdescription}
         />
         <Form.Control
           type="text"
@@ -166,8 +181,13 @@ const ResumeOption = ({
           onChange={handleProjectChange}
           placeholder="Features..."
           className="mb-3"
+          value={project.projectfeatures}
         />
-        <Button variant="primary" onClick={handleFeatureChange} className="mb-3">
+        <Button
+          variant="primary"
+          onClick={handleFeatureChange}
+          className="mb-3"
+        >
           <AiOutlinePlusCircle /> Add Feature
         </Button>
         <Form.Control
@@ -176,8 +196,13 @@ const ResumeOption = ({
           onChange={handleProjectChange}
           placeholder="Tech Stacks..."
           className="mb-3"
+          value={project.projecttechstack}
         />
-        <Button variant="primary" onClick={handleTechStackChange} className="mb-3">
+        <Button
+          variant="primary"
+          onClick={handleTechStackChange}
+          className="mb-3"
+        >
           <AiOutlinePlusCircle /> Add Tech Stack
         </Button>
         <br />

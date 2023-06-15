@@ -1,7 +1,6 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";;
+import { Container, Button } from "react-bootstrap";
 function HomePage() {
-  
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
       <Container>
