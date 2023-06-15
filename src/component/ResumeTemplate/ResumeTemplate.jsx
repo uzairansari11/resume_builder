@@ -25,7 +25,7 @@ const ResumeTemplate = ({
   // const ref = React.createRef();
   return (
     <>
-      <div className=" d-flex justify-content-around py-4 " ref={ref}>
+      <div className=" d-flex justify-content-around py-4 ">
         <div className="d-flex flex-column w-25  px-4 text-left  ">
           {/* Contact Section */}
           <div>
