@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { AiOutlinePlusCircle, AiOutlineTrash } from "react-icons/ai";
-
+import TagAutocomplete from "react-tag-autocomplete";
 const ResumeOption = ({
   handleContactDetails,
   skill,
@@ -79,6 +79,13 @@ const ResumeOption = ({
           placeholder="College/University Name..."
           className="mb-3"
         />
+        <Form.Control
+          type="text"
+          onChange={handleEducationDetails}
+          name="year"
+          placeholder="Duration..."
+          className="mb-3"
+        />
         <Button variant="primary" onClick={handleAddEducation} className="mb-3">
           Add Education
         </Button>
@@ -104,7 +111,7 @@ const ResumeOption = ({
           type="text"
           onChange={handleWorkExperienceDetails}
           name="year"
-          placeholder="Year..."
+          placeholder="Duration..."
           className="mb-3"
         />
         <Button variant="primary" onClick={handleAddWorkExperience} className="mb-3">

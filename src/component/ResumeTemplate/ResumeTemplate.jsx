@@ -1,5 +1,5 @@
 import React from "react";
-import CustomList from './CustomList';
+import CustomList from '../CustomList';
 
 const ResumeTemplate = ({
   contact,
@@ -41,14 +41,16 @@ const ResumeTemplate = ({
         {/* Education Section */}
         <div>
           <h5>Education</h5>
-
-          {educations?.map((item) => (
-            <>
-              {" "}
-              <p className="text-sm">{item.degree}</p>
-              <p>{item.college}</p>
-            </>
-          ))}
+          <ul className="list-unstyled">
+            {educations?.map((item) => (
+              <>
+                {" "}
+                <li className="text-sm">{item.degree}</li>
+                <li>{item.college}</li>
+                <li>{item.year}</li>
+              </>
+            ))}
+          </ul>
         </div>
         {/* Work Experience Section */}
         <div>
@@ -69,10 +71,10 @@ const ResumeTemplate = ({
           <h5>Interests</h5>
           <div className="d-flex flex-wrap">
             {intrestData.map((item) => (
-              <CustomList  data={item.intrest}/>
+              <CustomList data={item.intrest} />
             ))}
           </div>
-       
+
         </div>
       </div>
       <div className="d-flex flex-column w-50 px-4 text-left ">

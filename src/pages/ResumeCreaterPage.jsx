@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import ResumeTemplate from "../component/ResumeTemplate";
-import ResumeOption from '../component/ResumeOption';
+import ResumeTemplate from "../component/ResumeTemplate/ResumeTemplate";
+import ResumeOption from "../component/ResumeOption";
 
 const ResumeCreaterPage = () => {
   /* contact section  */
   const initialContactState = {
     name: "Uzair Ansari",
-    email: "uzairansari532@gmail.com",
+    email: "uzairans532@gmail.com",
     phone: "+91 7271 880 500",
   };
 
@@ -42,6 +42,7 @@ const ResumeCreaterPage = () => {
   const initialEducationState = {
     degree: "Uzair Ansari",
     college: "uzairansari532@gmail.com",
+    year: 2019
   };
 
   const [education, setEducation] = useState(initialEducationState);
@@ -61,7 +62,7 @@ const ResumeCreaterPage = () => {
 
   const initialWorkExperienceState = {
     comapny: "Uzair Ansari",
-    designation: "uzairansari532@gmail.com",
+    designation: "uzairans532@gmail.com",
     year: 2019,
   };
 
@@ -146,36 +147,40 @@ const ResumeCreaterPage = () => {
     <div className="d-flex justify-content-between px-4 mt-4 g-6 py-4">
       <div className="w-25 ">
         <ResumeOption
-          className="w-50"
-          handleContactDetails={handleContactDetails}
-          skill={skill}
-          handleSkillInputValue={handleSkillInputValue}
-          handleSkillsData={handleSkillsData}
-          handleEducationDetails={handleEducationDetails}
-          handleAddEducation={handleAddEducation}
-          handleWorkExperienceDetails={handleWorkExperienceDetails}
-          handleAddWorkExperience={handleAddWorkExperience}
-          handleIntrestInputValue={handleIntrestInputValue}
-          handleIntrestData={handleIntrestData}
-          intrest={intrest}
-          handleSummary={handleSummary}
-          summary={summary}
-          handleProjectChange={handleProjectChange}
-          handleTechStackChange={handleTechStackChange}
-          handleFeatureChange={handleFeatureChange}
-          handleProjectData={handleProjectData}
+          {...{
+            handleContactDetails,
+            skill,
+            handleSkillInputValue,
+            handleSkillsData,
+            handleEducationDetails,
+            handleAddEducation,
+            handleWorkExperienceDetails,
+            handleAddWorkExperience,
+            handleIntrestInputValue,
+            handleIntrestData,
+            intrest,
+            handleSummary,
+            summary,
+            handleProjectChange,
+            handleTechStackChange,
+            handleFeatureChange,
+            handleProjectData,
+          }}
         />
+
       </div>
       <div className="w-75">
         {" "}
         <ResumeTemplate
-          contact={contact}
-          skills={skills}
-          educations={educations}
-          workExperienceData={workExperienceData}
-          intrestData={intrestData}
-          summary={summary}
-          projectData={projectData}
+          {...{
+            contact,
+            skills,
+            educations,
+            workExperienceData,
+            intrestData,
+            summary,
+            projectData,
+          }}
         />
       </div>
     </div>
