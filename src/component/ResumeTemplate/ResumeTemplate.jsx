@@ -21,6 +21,7 @@ const ResumeTemplate = ({
     format: [595, 842], // A4 size in pixels (width, height)
     scale: 10, // Higher scale for higher resolution
   };
+  
 
   const ref = React.createRef();
   return (
