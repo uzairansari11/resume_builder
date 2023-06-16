@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import ResumeTemplate from "../component/ResumeTemplate/ResumeTemplate";
 import ResumeOption from "../component/ResumeInputs/ResumeOption";
 import SelectionComponent from "../component/ResumeInputs/SelectionComponent";
-
+import { Button } from "react-bootstrap";
+import { BiHomeAlt2 } from "react-icons/bi";
+import { Link } from "react-router-dom";
 const ResumeCreaterPage = () => {
   /* -------------contact section------------------------- */
   const initialContactState = {
@@ -174,55 +176,66 @@ const ResumeCreaterPage = () => {
     setSelectedOption(selectedItem);
   };
   return (
-    <div className="d-flex justify-content-between px-4 mt-4  py-4">
-      <div className="w-25 ">
-        <div className='mt-4'>
+    <>
+      {" "}
+      <div className="d-flex ml-4">
+        <Link to="/">
           {" "}
-          <SelectionComponent handleSelection={handleSelection} />
-        </div>
+          <Button className="mt-2 text-left" variant="success">
+            <BiHomeAlt2 />
+          </Button>
+        </Link>
+      </div>
+      <div className="d-flex justify-content-between px-4 mt-4  py-4">
+        <div className="w-25 ">
+          <div className="mt-4">
+            {" "}
+            <SelectionComponent handleSelection={handleSelection} />
+          </div>
 
-        <ResumeOption
-          {...{
-            selectedOption,
-            handleContactDetails,
-            skill,
-            handleSkillInputValue,
-            handleSkillsData,
-            education,
-            handleEducationDetails,
-            handleAddEducation,
-            workExperience,
-            handleWorkExperienceDetails,
-            handleAddWorkExperience,
-            handleinterestInputValue,
-            handleinterestData,
-            interest,
-            education,
-            handleSummary,
-            summary,
-            project,
-            handleProjectChange,
-            handleTechStackChange,
-            handleFeatureChange,
-            handleProjectData,
-          }}
-        />
+          <ResumeOption
+            {...{
+              selectedOption,
+              handleContactDetails,
+              skill,
+              handleSkillInputValue,
+              handleSkillsData,
+              education,
+              handleEducationDetails,
+              handleAddEducation,
+              workExperience,
+              handleWorkExperienceDetails,
+              handleAddWorkExperience,
+              handleinterestInputValue,
+              handleinterestData,
+              interest,
+              education,
+              handleSummary,
+              summary,
+              project,
+              handleProjectChange,
+              handleTechStackChange,
+              handleFeatureChange,
+              handleProjectData,
+            }}
+          />
+        </div>
+        <div className="w-75">
+          {" "}
+          <ResumeTemplate
+            {...{
+              contact,
+              skills,
+              educations,
+              workExperienceData,
+              interestData,
+              summary,
+              projectData,
+            }}
+          />
+        </div>
       </div>
-      <div className="w-75">
-        {" "}
-        <ResumeTemplate
-          {...{
-            contact,
-            skills,
-            educations,
-            workExperienceData,
-            interestData,
-            summary,
-            projectData,
-          }}
-        />
-      </div>
-    </div>
+    </>
   );
 };
 
