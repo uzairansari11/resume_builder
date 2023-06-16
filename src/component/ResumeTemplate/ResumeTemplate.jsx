@@ -21,13 +21,13 @@ const ResumeTemplate = ({
     format: [595, 842], // A4 size in pixels (width, height)
     scale: 10, // Higher scale for higher resolution
   };
-  
+
 
   const ref = React.createRef();
   return (
     <>
       <div className=" d-flex justify-content-around py-4" ref={ref}>
-        <div className="d-flex flex-column w-25  px-4 text-left  ">
+        <div className="d-flex flex-column w-30  px-4 text-left  ">
           {/* Contact Section */}
           <div>
             <h5>Contact</h5>
