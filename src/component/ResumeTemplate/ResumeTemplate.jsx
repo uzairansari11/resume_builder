@@ -1,6 +1,6 @@
 import React from "react";
 import CustomList from "./CustomList";
-// import Pdf from "react-to-pdf";
+import Pdf from "react-to-pdf";
 import { Button } from "react-bootstrap";
 import Contact from "./Contact";
 import EdAndExp from "./EdAndExp";
@@ -15,17 +15,17 @@ const ResumeTemplate = ({
   summary,
   projectData,
 }) => {
-  // const options = {
-  //   orientation: "portrait",
-  //   unit: "px",
-  //   format: [595, 842], // A4 size in pixels (width, height)
-  //   scale: 1, // Higher scale for higher resolution
-  // };
+  const options = {
+    orientation: "portrait",
+    unit: "px",
+    format: [595, 842], // A4 size in pixels (width, height)
+    scale: 10, // Higher scale for higher resolution
+  };
 
-  // const ref = React.createRef();
+  const ref = React.createRef();
   return (
     <>
-      <div className=" d-flex justify-content-around py-4 ">
+      <div className=" d-flex justify-content-around py-4" ref={ref}>
         <div className="d-flex flex-column w-25  px-4 text-left  ">
           {/* Contact Section */}
           <div>
@@ -100,13 +100,13 @@ const ResumeTemplate = ({
         </div>
       </div>
 
-      {/* <Pdf targetRef={ref} filename="code-example.pdf" options={options}>
+      <Pdf targetRef={ref} filename="code-example.pdf" options={options}>
         {({ toPdf }) => (
           <Button onClick={toPdf} className="mt-4">
             Generate Pdf
           </Button>
         )}
-      </Pdf> */}
+      </Pdf>
     </>
   );
 };
